@@ -35,12 +35,23 @@ class Board:
 
 
     def assign_values_to_board(self):
-        
+        for r in range(self.dim_size):
+            for c in range(self.dim_size):
+                if self.board[r][c] == "*":
+                    continue
+                self.board[r][c] = self.get_num_neighboring_bombs(self, r, c)
 
 
+    def get_num_neighboring_bombs(self, row, col):
+        num_neighboring_bombs = 0
+        for r in range(max(0, row-1), min(self.dim_size-1, row+1)+1):
+            for c in range(max(0, col-1), min(self.dim_size-1, col+1)+1):
+                if r == row and c == col:
+                    continue
+                if self.board[r][c] == "*":
+                    num_neighboring_bombs += 1
 
 
 # playing the game
 def play(dim_size=10, num_bombs=10):
-
     pass
