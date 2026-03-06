@@ -6,4 +6,4 @@ Doing it with the help of Kylie Ying on YT to refresh and strengthen my Python f
 
 You can play by running the script: `python3 minesweeper.py`
 
-![](./)
+![](./screenshot.png)
